@@ -9,6 +9,7 @@ function App() {
       <Header />
       <main>
         <section id="core-concepts">
+          <h2>Core Concepts</h2>
           <ul>
             <Coreconcepts {...CORE_CONCEPTS[0]} />
             <Coreconcepts {...CORE_CONCEPTS[1]} />
