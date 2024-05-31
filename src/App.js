@@ -5,6 +5,9 @@ import Tabbutton from "./components/tabbutton";
 import { CORE_CONCEPTS } from "./data/data";
 
 function App() {
+  function clickHandler(selectedComponents) {
+    console.log(selectedComponents);
+  }
   return (
     <div>
       <Header />
@@ -20,12 +23,37 @@ function App() {
         </section>
         <section id="examples">
           <h2>Examples</h2>
-          <main>
-            <Tabbutton>Components</Tabbutton>
-            <Tabbutton>JSX</Tabbutton>
-            <Tabbutton>Props</Tabbutton>
-            <Tabbutton>State</Tabbutton>
-          </main>
+          <menu>
+            <Tabbutton
+              onclicking={() => {
+                clickHandler("components");
+              }}
+            >
+              Components
+            </Tabbutton>
+            <Tabbutton
+              onclicking={() => {
+                clickHandler("JSX");
+              }}
+            >
+              JSX
+            </Tabbutton>
+            <Tabbutton
+              onclicking={() => {
+                clickHandler("Props");
+              }}
+            >
+              Props
+            </Tabbutton>
+            <Tabbutton
+              onclicking={() => {
+                clickHandler("State");
+              }}
+            >
+              {" "}
+              State
+            </Tabbutton>
+          </menu>
         </section>
       </main>
     </div>

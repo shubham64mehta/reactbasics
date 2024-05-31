@@ -1,7 +1,7 @@
 const Tabbutton = (props) => {
   return (
     <li>
-      <button>{props.children}</button>
+      <button onClick={props.onclicking}>{props.children}</button>
     </li>
   );
 };
