@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Coreconcepts from "./components/coreconcept";
 import Header from "./components/header";
@@ -5,8 +6,10 @@ import Tabbutton from "./components/tabbutton";
 import { CORE_CONCEPTS } from "./data/data";
 
 function App() {
+  const [selectedComponents, setSelectedComponents] = useState("Please click");
+
   function clickHandler(selectedComponents) {
-    console.log(selectedComponents);
+    setSelectedComponents(selectedComponents);
   }
   return (
     <div>
@@ -54,6 +57,7 @@ function App() {
               State
             </Tabbutton>
           </menu>
+          {selectedComponents}
         </section>
       </main>
     </div>
