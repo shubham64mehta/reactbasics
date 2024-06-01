@@ -3,10 +3,10 @@ import "./App.css";
 import Coreconcepts from "./components/coreconcept";
 import Header from "./components/header";
 import Tabbutton from "./components/tabbutton";
-import { CORE_CONCEPTS } from "./data/data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data/data";
 
 function App() {
-  const [selectedComponents, setSelectedComponents] = useState("Please click");
+  const [selectedComponents, setSelectedComponents] = useState("components");
 
   function clickHandler(selectedComponents) {
     setSelectedComponents(selectedComponents);
@@ -32,32 +32,37 @@ function App() {
                 clickHandler("components");
               }}
             >
-              Components
+              components
             </Tabbutton>
             <Tabbutton
               onclicking={() => {
-                clickHandler("JSX");
+                clickHandler("jsx");
               }}
             >
-              JSX
+              jSX
             </Tabbutton>
             <Tabbutton
               onclicking={() => {
-                clickHandler("Props");
+                clickHandler("props");
               }}
             >
-              Props
+              props
             </Tabbutton>
             <Tabbutton
               onclicking={() => {
-                clickHandler("State");
+                clickHandler("state");
               }}
             >
-              {" "}
-              State
+              state
             </Tabbutton>
           </menu>
-          {selectedComponents}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedComponents].title}</h3>
+            <p>{EXAMPLES[selectedComponents].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedComponents].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
