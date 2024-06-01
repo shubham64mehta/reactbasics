@@ -6,7 +6,7 @@ import Tabbutton from "./components/tabbutton";
 import { CORE_CONCEPTS, EXAMPLES } from "./data/data";
 
 function App() {
-  const [selectedComponents, setSelectedComponents] = useState("components");
+  const [selectedComponents, setSelectedComponents] = useState();
 
   function clickHandler(selectedComponents) {
     setSelectedComponents(selectedComponents);
@@ -56,13 +56,17 @@ function App() {
               state
             </Tabbutton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedComponents].title}</h3>
-            <p>{EXAMPLES[selectedComponents].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedComponents].code}</code>
-            </pre>
-          </div>
+          {/* this is for rendiering data conditionally */}
+          {!selectedComponents && <p>Please select the topic</p>}
+          {selectedComponents && (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedComponents].title}</h3>
+              <p>{EXAMPLES[selectedComponents].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedComponents].code}</code>
+              </pre>
+            </div>
+          )}
         </section>
       </main>
     </div>
