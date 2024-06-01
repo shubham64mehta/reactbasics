@@ -28,6 +28,7 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <Tabbutton
+              isSelected={selectedComponents === "components"}
               onclicking={() => {
                 clickHandler("components");
               }}
@@ -35,6 +36,7 @@ function App() {
               components
             </Tabbutton>
             <Tabbutton
+              isSelected={selectedComponents === "jsx"}
               onclicking={() => {
                 clickHandler("jsx");
               }}
@@ -42,6 +44,7 @@ function App() {
               jSX
             </Tabbutton>
             <Tabbutton
+              isSelected={selectedComponents === "props"}
               onclicking={() => {
                 clickHandler("props");
               }}
@@ -49,6 +52,7 @@ function App() {
               props
             </Tabbutton>
             <Tabbutton
+              isSelected={selectedComponents === "state"}
               onclicking={() => {
                 clickHandler("state");
               }}
