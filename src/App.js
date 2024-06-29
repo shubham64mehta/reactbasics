@@ -62,7 +62,7 @@ function App() {
           </ul>
         </Section>
         <Section id="examples" title="Examples">
-          <Tabs menuChildren={tabMenuElements}>
+          <Tabs menuChildren={tabMenuElements} ButtonContainer="menu">
             {/* this is for rendiering data conditionally */}
             {!selectedComponents && <p>Please select the topic</p>}
             {selectedComponents && (
